@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Zeus - Exhibiton mode 2</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/prism.css">
+</head>
+
+<body>
+    <section class="code" id="code">
+        <h1>I back with this ...</h1>
+        <div class="box" id="box">
+            <div class="idebody">
+                <div class="idecontent" id="idecontent1">
+                    <pre class="line-numbers"><code class="language-html">&lt;section class=&quot;card1&quot;&gt;
+							&lt;div class=&quot;box&quot;&gt;
+							&lt;span&gt;&lt;/span&gt;
+							&lt;content&gt;
+							&lt;h2&gt;Exhibition Mode&lt;/h2&gt;
+							&lt;p&gt;in this mode you can't do a lot, The page is working itself without any user-control as if you are watching a film, Things apper and dissapper automatically, and this was the main design&lt;/p&gt;
+							&lt;a href=&quot;Zeus - exhibition/index.html&quot;&gt;&lt;button&gt;See it!&lt;/button&gt;&lt;/a&gt;
+							&lt;/content&gt;
+							&lt;/div&gt;
+						&lt;/section&gt;</code></pre>
+                </div>
+                <div class="idecontent" id="idecontent2">
+                    <pre class="line-numbers"><code class="language-css">html, body {
+							width: 100vw;
+							height: 100vh;
+							margin: 0;
+							padding: 0;
+							overflow: hidden;
+							font-size: 16px;
+							font-family: 'Poppins', sans-serif;
+							}
+							canvas {
+							    position: fixed;
+							    top: 0;
+							    left: 0;
+							    width: 100%;
+							    height: 100%;
+							    z-index: -1;
+							}
+							.diss {
+							display: none;
+						}</code></pre>
+                </div>
+                <div class="idecontent" id="idecontent3">
+                    <pre class="line-numbers"><code class="language-css">/********************************* loader **********************************/
+							section.loader {
+							  width: 100vw;
+							  height: 100vh;
+							  background-color: darkcyan;
+							  animation: animateColor 10s ease-in-out infinite;
+							}
+							
+							section.loader div svg {
+							  fill: none;
+							  stroke-dasharray: 518;
+							    stroke-dashoffset: 518;
+							    transform: rotateX(180deg);
+							}
+							@keyframes animateColor {
+							  from {
+							      filter: hue-rotate(0deg);
+							  }
+							  to {
+							    filter: hue-rotate(360deg);
+							  }
+						}</code></pre>
+                </div>
+                <div class="idecontent" id="idecontent4">
+                    <pre class="line-numbers"><code class="language-css">section.hello {
+							position: relative;
+							width: 100vw;
+							height: 100vh;
+							display: flex;
+							justify-content: center;
+							align-items: center;
+							background-color: black;
+							animation: changebg 8s cubic-bezier(.68,-0.55,.27,1.55) 5s;
+							}
+							@keyframes changebg {
+							0% {
+							background-color: #231f38;
+							}
+							40% {
+							background-color: #231f38;
+							}
+							100% {
+							background-color: black;
+							}
+							}
+						</code></pre>
+                </div>
+                <div class="idecontent" id="idecontent5">
+                    <pre class="line-numbers"><code class="language-css">/****************** hello *****************/
+							section.hello div.hellocont {
+							  animation: hello 8s cubic-bezier(.68,-0.55,.27,1.55) forwards 5s;
+							}
+							section.hello div.hellocont svg:nth-child(1) {
+							  stroke-dasharray: 2000;
+							  stroke-dashoffset: 2000;
+							  animation: strokeanimate 8s ease forwards 5s;
+							}
+							@keyframes strokeanimate {
+							  to {
+							    stroke-dashoffset: 0;
+							  }
+							}
+							section.hello div.hellocont svg text {
+							  animation: fillwhite .5s ease forwards 10.5s;
+							}
+							@keyframes fillwhite {
+							  to {
+							    fill: white;
+							  }
+						</code></pre>
+                </div>
+                <div class="idecontent" id="idecontent6">
+                    <pre class="line-numbers"><code class="language-js">document.body.addEventListener("keydown", (event)=> {
+							if(event.keyCode == 38 || event.keyCode == 87) {
+							if (i == 0) {
+							document.getElementById("title").nextElementSibling.style.cssText= "opacity: 1;"
+							i++
+							}
+							else if (i == 2) {
+							document.getElementById("paragraph2").nextElementSibling.style.cssText= "opacity: 1;"
+							i++
+							}
+							else if (i == 3) {
+							document.getElementById("paragraph3").nextElementSibling.style.cssText= "opacity: 1;"
+							i++
+							}
+							setTimeout(() => {
+							const zebracame = document.createElement("h1");
+							const zebracamep = document.createTextNode("zebra came home");
+							fireworks.appendChild(contanimtedbutton);
+							animtedbuttonpar.appendChild();
+							}, 6500)
+						</code></pre>
+                </div>
+                <div class="idecontent" id="idecontent7">
+                    <a href="soon.html"><span>Learn More</span></a>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+    <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="js/prism.js"></script>
+</body>
+
+</html>

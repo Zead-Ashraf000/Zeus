@@ -1,0 +1,646 @@
+html,
+body {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+}
+
+canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.diss {
+    display: none;
+}
+
+/********************************* loader **********************************/
+
+section.loader {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background-color: darkcyan;
+    transition: 1s;
+    animation: animateColor 10s ease-in-out infinite;
+}
+
+section.loader div {
+    position: relative;
+    width: 25%;
+    height: 30%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+section.loader div svg {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    fill: none;
+    stroke: aqua;
+    stroke-width: 30;
+    stroke-linecap: round;
+    stroke-dasharray: 518;
+    stroke-dashoffset: 518;
+    transform: rotateX(180deg);
+    animation: animate 2s linear infinite;
+}
+
+section.loader div svg circle {
+    transform: translate(25%);
+}
+
+@keyframes animate {
+
+    0%,
+    100% {
+        stroke-dasharray: 518;
+    }
+
+    50% {
+        stroke-dasharray: 740;
+    }
+
+    60.1165% {
+        opacity: 0;
+    }
+}
+
+@keyframes animateColor {
+    from {
+        filter: hue-rotate(0deg);
+    }
+
+    to {
+        filter: hue-rotate(360deg);
+    }
+}
+
+/*****************************************************/
+
+@media (max-width: 992) and (orientation: landscape) {
+    div {
+        height: 55%;
+    }
+}
+
+
+@media (max-width: 767px) {
+    div {
+        width: 100%;
+    }
+
+    svg circle {
+        transform: translate(35%);
+    }
+}
+
+@media (min-width: 768px) and (max-width: 992px) {}
+
+@media (min-width: 810px) and (max-width: 992px) {
+    svg circle {
+        transform: translate(20%);
+    }
+}
+
+
+/********************************** hello ***************************************/
+
+section.hello {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    overflow: hidden;
+    animation: changebg 8s cubic-bezier(.68, -0.55, .27, 1.55) 5s;
+}
+
+
+@keyframes changebg {
+    0% {
+        background-color: #231f38;
+    }
+
+    40% {
+        background-color: #231f38;
+    }
+
+    100% {
+        background-color: black;
+    }
+}
+
+/****************** hello *****************/
+
+section.hello div.hellocont {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50.1%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    opacity: 1;
+    animation: hello 8s cubic-bezier(.68, -0.55, .27, 1.55) forwards 5s;
+}
+
+section.hello div.hellocont svg {
+    width: 100%;
+    margin: -21%;
+    stroke-dasharray: 2000;
+    stroke-dashoffset: 2000;
+    animation: strokeanimate 8s ease forwards 5s;
+}
+
+section.hello div.hellocont svg:nth-child(2) {
+    animation-delay: 6s !important;
+}
+
+section.hello div.hellocont svg:nth-child(3) {
+    animation-delay: 7s !important;
+}
+
+section.hello div.hellocont svg:nth-child(4) {
+    animation-delay: 8s !important;
+}
+
+section.hello div.hellocont svg:nth-child(5) {
+    animation-delay: 9s !important;
+}
+
+@keyframes strokeanimate {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+section.hello div.hellocont svg text {
+    transition: .5s;
+    animation: fillwhite .5s ease forwards 10.5s;
+}
+
+@keyframes fillwhite {
+    from {
+        fill: transparent;
+    }
+
+    to {
+        fill: white;
+    }
+}
+
+@keyframes hello {
+    0% {
+        opacity: 0;
+    }
+
+    40% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+/****************** zebra ****************/
+
+section.hello .text {
+    position: relative;
+    color: #fff;
+    font-weight: 700;
+    font-size: 45px;
+    transform: scale(2);
+    padding: 30px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    opacity: 0;
+    animation-delay: 11s !important;
+    animation: apper 12s linear;
+}
+
+section.hello .text:before,
+section.hello .text:after {
+    padding: 30px;
+    color: white;
+    content: attr(data-text);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: black;
+    overflow: hidden;
+    top: 0;
+}
+
+section.hello .text:before {
+    left: 3px;
+    text-shadow: -2px 0 red;
+    animation: glitch-1 2s linear infinite reverse;
+}
+
+section.hello .text:after {
+    left: -3px;
+    text-shadow: -2px 0 blue;
+    animation: glitch-2 2s linear infinite reverse;
+}
+
+@keyframes glitch-1 {
+    0% {
+        clip: rect(132px, auto, 101px, 30px);
+    }
+
+    5% {
+        clip: rect(17px, auto, 94px, 30px);
+    }
+
+    10% {
+        clip: rect(40px, auto, 66px, 30px);
+    }
+
+    15% {
+        clip: rect(87px, auto, 82px, 30px);
+    }
+
+    20% {
+        clip: rect(137px, auto, 61px, 30px);
+    }
+
+    25% {
+        clip: rect(34px, auto, 14px, 30px);
+    }
+
+    30% {
+        clip: rect(133px, auto, 74px, 30px);
+    }
+
+    35% {
+        clip: rect(76px, auto, 107px, 30px);
+    }
+
+    40% {
+        clip: rect(59px, auto, 130px, 30px);
+    }
+
+    45% {
+        clip: rect(29px, auto, 84px, 30px);
+    }
+
+    50% {
+        clip: rect(22px, auto, 67px, 30px);
+    }
+
+    55% {
+        clip: rect(67px, auto, 62px, 30px);
+    }
+
+    60% {
+        clip: rect(10px, auto, 105px, 30px);
+    }
+
+    65% {
+        clip: rect(78px, auto, 115px, 30px);
+    }
+
+    70% {
+        clip: rect(105px, auto, 13px, 30px);
+    }
+
+    75% {
+        clip: rect(15px, auto, 75px, 30px);
+    }
+
+    80% {
+        clip: rect(66px, auto, 39px, 30px);
+    }
+
+    85% {
+        clip: rect(133px, auto, 73px, 30px);
+    }
+
+    90% {
+        clip: rect(36px, auto, 128px, 30px);
+    }
+
+    95% {
+        clip: rect(68px, auto, 103px, 30px);
+    }
+
+    100% {
+        clip: rect(14px, auto, 100px, 30px);
+    }
+}
+
+@keyframes glitch-2 {
+    0% {
+        clip: rect(129px, auto, 36px, 30px);
+    }
+
+    5% {
+        clip: rect(36px, auto, 4px, 30px);
+    }
+
+    10% {
+        clip: rect(85px, auto, 66px, 30px);
+    }
+
+    15% {
+        clip: rect(91px, auto, 91px, 30px);
+    }
+
+    20% {
+        clip: rect(148px, auto, 138px, 30px);
+    }
+
+    25% {
+        clip: rect(38px, auto, 122px, 30px);
+    }
+
+    30% {
+        clip: rect(69px, auto, 54px, 30px);
+    }
+
+    35% {
+        clip: rect(98px, auto, 71px, 30px);
+    }
+
+    40% {
+        clip: rect(146px, auto, 34px, 30px);
+    }
+
+    45% {
+        clip: rect(134px, auto, 43px, 30px);
+    }
+
+    50% {
+        clip: rect(102px, auto, 80px, 30px);
+    }
+
+    55% {
+        clip: rect(119px, auto, 44px, 30px);
+    }
+
+    60% {
+        clip: rect(106px, auto, 99px, 30px);
+    }
+
+    65% {
+        clip: rect(141px, auto, 74px, 30px);
+    }
+
+    70% {
+        clip: rect(20px, auto, 78px, 30px);
+    }
+
+    75% {
+        clip: rect(133px, auto, 79px, 30px);
+    }
+
+    80% {
+        clip: rect(78px, auto, 52px, 30px);
+    }
+
+    85% {
+        clip: rect(35px, auto, 39px, 30px);
+    }
+
+    90% {
+        clip: rect(67px, auto, 70px, 30px);
+    }
+
+    95% {
+        clip: rect(71px, auto, 103px, 30px);
+    }
+
+    100% {
+        clip: rect(83px, auto, 40px, 30px);
+    }
+}
+
+/***************** astevation *******************/
+
+section.hello p {
+    position: absolute;
+    width: 100%;
+    font-size: 7ch;
+    text-align: center;
+    background-image: url("../images/joker.jpg");
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    font-weight: 700;
+    opacity: 0;
+    animation-delay: 20s !important;
+    animation: apper 10s linear;
+}
+
+@keyframes apper {
+    0% {
+        opacity: 0;
+    }
+
+    40% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+
+
+/******************************************************************************/
+
+.fillblue {
+    width: 100vw;
+    height: 100vh;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.fillblue span {
+    display: block;
+    position: relative;
+    width: 1px;
+    height: 1px;
+    background-color: #2a9d8f;
+    border-radius: 50%;
+    animation: fillblue 5s cubic-bezier(.55, .09, .95, .49);
+}
+
+@keyframes fillblue {
+    0% {
+        opacity: 1;
+        box-shadow: 0 0 0 0 #2a9d8f;
+    }
+
+    100% {
+        box-shadow: 0 0 0 30000px #2a9d8f;
+        opacity: 0;
+    }
+}
+
+/******************************************************************************/
+
+.exhbition {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    font-family: 'Are You Serious', cursive;
+    background-color: black;
+    transition: 3s;
+}
+
+.exhbition h1 {
+    margin: 0;
+    padding-top: 25px;
+    text-align: center;
+    font-size: 3rem;
+    color: white;
+}
+
+.exhbition h2 {
+    font-size: 4rem;
+    color: red;
+    opacity: 0;
+    transition: opacity 1s linear;
+}
+
+.exhbition p {
+    font-size: 2rem;
+    color: white;
+    opacity: 0;
+    transition: opacity 1s linear;
+}
+
+.exhbition div {
+    width: 100%;
+}
+
+.exhbition div img {
+    width: 9%;
+    height: 37%;
+}
+
+#arrowp {
+    font-size: 2.5rem;
+    color: white;
+    opacity: 1;
+    margin-left: 10px;
+    margin-top: 0;
+}
+
+/******************************************************************************/
+section.fireworks h1 {
+    color: white;
+    text-align: center;
+    font-size: 3rem;
+    text-shadow: 0px 0px 10px #FF5252, 0 0 10px white;
+    animation: changeshadow 15s ease infinite;
+}
+
+@keyframes changeshadow {
+    0% {
+        text-shadow: 0px 0px 10px #FF5252, 0 0 10px white, 0 7px 10px #3a0ca3;
+    }
+
+    10% {
+        text-shadow: 0px 0px 10px #3a0ca3, 0 0 10px white, 0 7px 10px #4cc9f0;
+    }
+
+    20% {
+        text-shadow: 0px 0px 10px #ef7a85, 0 0 10px white, 0 7px 10px #6e44ff;
+    }
+
+    30% {
+        text-shadow: 0px 0px 10px #f896d8, 0 0 10px white, 0 7px 10px #564592;
+    }
+
+    40% {
+        text-shadow: 0px 0px 10px #a5e6ba, 0 0 10px white, 0 7px 10px #f72585;
+    }
+
+    50% {
+        text-shadow: 0px 0px 10px #3f37c9, 0 0 10px white, 0 7px 10px #ffcbf2;
+    }
+
+    60% {
+        text-shadow: 0px 0px 10px #c0fdff, 0 0 10px white, 0 7px 10px #ffcbf2;
+    }
+
+    70% {
+        text-shadow: 0px 0px 10px #ef7a85, 0 0 10px white, 0 7px 10px #bc00dd;
+    }
+
+    80% {
+        text-shadow: 0px 0px 10px #724cf9, 0 0 10px white, 0 7px 10px #a5e6ba;
+    }
+
+    90% {
+        text-shadow: 0px 0px 10px #dec9e9, 0 0 10px white, 0 7px 10px #240046;
+    }
+
+    100% {
+        text-shadow: 0px 0px 10px #4cc9f0, 0 0 10px white, 0 7px 10px #ffcbf2;
+    }
+}
+
+/******************************************************************************/
+
+section.fireworks div {
+    display: inline-flex;
+    justify-content: center;
+    width: 100%;
+    background-color: black;
+}
+
+section.fireworks div button {
+    width: 180px;
+    height: 60px;
+    color: white;
+    background-color: black;
+    text-align: center;
+    transition: 0.5s;
+    border: none;
+}
+
+div button:hover {
+    background: #730bec url("../images/pixel2.png");
+    transition-delay: 0.8s;
+    background-size: 180px;
+    animation: buttonanimate 0.8s steps(8) forwards;
+}
+
+@keyframes buttonanimate {
+    0% {
+        background-position-y: 0;
+    }
+
+    100% {
+        background-position-y: 480px;
+    }
+}

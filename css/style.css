@@ -1,0 +1,238 @@
+html, body {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100vw;
+	height: 100vh;
+	margin: 0;
+	box-sizing: border-box;
+	background: linear-gradient(to right top, #845ec2, #d65db1, #ff6f91, #ff9671, #ffc75f);
+	background-size: 100%;
+	background-repeat: no-repeat;
+	font-size: 16px;
+}
+
+/******************************************************************************/
+
+main {
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+/******************************************************************************/
+
+section {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap; 
+	padding: 40px 0;
+}
+
+/************************************************/
+
+section .box {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 320px;
+	height: 400px;
+	margin: 30px 40px;
+	transition: 0.5s;
+}
+
+section .box::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 50px;
+	width: 50%;
+	height: 100%;
+	background-color: white;
+	border-radius: 8px;
+	transition: 0.5s;
+	transform: skewX(15deg);
+}
+
+section .box::after {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 50px;
+	width: 50%;
+	height: 100%;
+	background-color: white;
+	border-radius: 8px;
+	transition: 0.5s;
+	transform: skewX(15deg);
+	filter: blur(30px);
+}
+
+section .box:hover::before,
+section .box:hover::after {
+	transform: skewX(0deg);
+	left: 20px;
+	width: calc(100% - 90px);
+}
+
+section .box::before,
+section .box::after {
+	background: linear-gradient(315deg, #ffbc00, #ff0058);
+}
+
+section.card2 .box::before,
+section.card2 .box::after {
+	background: linear-gradient(315deg, #03a9f4, #ff0058);
+}
+
+/************************************************/
+
+section .box span {
+	position: absolute;
+	display: block;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 50;
+	pointer-events: none;
+}
+
+section .box span::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(255, 255, 255, 0.1);
+	border-radius: 8px;
+	backdrop-filter: blur(10px);
+	opacity: 0;
+	transition: .5s;
+	animation-delay: -1s;
+}
+
+section .box:hover span::before {
+	position: absolute;
+	top: -50px;
+	left: 50px;
+	width: 100px;
+	height: 100px;
+	opacity: 1;
+	animation: updown 2s linear infinite;
+}
+
+/************************************************/
+
+section .box span::after {
+	content: "";
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(255, 255, 255, 0.1);
+	border-radius: 8px;
+	backdrop-filter: blur(10px);
+	opacity: 0;
+	transition: .5s;
+	animation-delay: -1s;
+}
+
+section .box:hover span::after {
+	position: absolute;
+	bottom: -50px;
+	right: 50px;
+	width: 100px;
+	height: 100px;
+	opacity: 1;
+	animation: updown 2s linear infinite;
+}
+
+@keyframes updown {
+	0%, 100%{
+		transform: translateY(10px);
+	}
+
+	50% {
+		transform: translateY(-10px);
+	}
+}
+
+/******************************************************************************/
+
+section .box content {
+	position: relative;
+	left: 0;
+	padding: 20px 40px;
+	background-color: rgba(255, 255, 255, 0.1);
+	color: white;
+	border-radius: 8px;
+	transition: .5s;
+	z-index: 1;
+}
+
+section .box:hover content {
+	left: -25px;
+	padding: 60px 40px;
+}
+
+section .box content h2 {
+	font-size: 1.7rem;
+	margin: 10px;
+}
+
+section .box content p {
+	font-size: 1.1rem;
+	line-height: 26px
+}
+
+section .box content button {
+	border: none;
+	color: black;
+	padding: 8px 42px;
+	background-color: white;
+	border-radius: 5px;
+}
+
+/******************************************************************************/
+
+@media (max-height: 992px) {
+	body {
+		flex-direction: column;
+		height: 160vh
+	}
+
+	.card1 {
+		margin-top: 170px;
+	}
+}
+
+@media (max-height: 992px) and (orientation: landscape) {
+	body {
+		flex-direction: row;
+		height: 160vh;
+		width: 100vw;
+		background-repeat: repeat;
+	}
+
+	.card1 {
+		margin-top: 0;
+	}
+
+}
+
+@media (min-width: 992px) {
+	body {
+		flex-direction: row;
+		height: 100vh;
+	}
+
+	.card1 {
+		margin-top: 0;
+	}
+}
