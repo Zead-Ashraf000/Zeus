@@ -103,6 +103,68 @@ setTimeout(() => {
 
 }, 40000)
 
+let touchCount = 0;
+
+document.body.addEventListener("touchmove", () => {
+            if (touchCount == 0) {
+                document.getElementById("title").nextElementSibling.style.cssText = "opacity: 1;"
+                touchCount++
+
+            } else if (touchCount == 1) {
+                document.getElementById("paragraph1").nextElementSibling.style.cssText = "opacity: 1;"
+                touchCount++
+            } else if (touchCount == 2) {
+                document.getElementById("paragraph2").nextElementSibling.style.cssText = "opacity: 1;"
+                touchCount++
+            } else if (touchCount == 3) {
+                document.getElementById("paragraph3").nextElementSibling.style.cssText = "opacity: 1;"
+                touchCount++
+            } else if (touchCount == 4) {
+                document.getElementById("paragraph4").nextElementSibling.style.cssText = "opacity: 1;"
+                touchCount++
+            } else if (touchCount == 5) {
+                document.getElementById("paragraph5").nextElementSibling.style.cssText = "opacity: 1;"
+                touchCount++
+                setTimeout(() => {
+                    document.getElementById("exhbition").style.cssText = "opacity: 0;"
+                    const firesection = document.createElement("section");
+                    firesection.className = "firesection";
+                    firesection.id = "firesection";
+                }, 3500)
+                setTimeout(() => {
+                    document.getElementById("exhbition").className = "diss";
+                    const zebracame = document.createElement("h1");
+                    const zebracamep = document.createTextNode("zebra came home");
+                    zebracame.appendChild(zebracamep)
+                    const fireworks = document.createElement("section");
+                    document.body.appendChild(fireworks);
+                    fireworks.className = "fireworks";
+                    fireworks.id = "fireworks";
+                    const scanvas = document.createElement("canvas");
+
+                    scanvas.id = "Canvas";
+
+                    fireworks.appendChild(scanvas);
+                    fireworks.appendChild(zebracame);
+
+                    const animtedbutton = document.createElement("button");
+                    const contanimtedbutton = document.createElement("div");
+                    const animtedbuttonpar = document.createElement("p");
+                    const animtedbuttonparagraph = document.createTextNode("Learn more");
+
+                    contanimtedbutton.appendChild(animtedbutton)
+                    fireworks.appendChild(contanimtedbutton);
+                    animtedbutton.appendChild(animtedbuttonpar);
+                    animtedbuttonpar.appendChild(animtedbuttonparagraph);
+                    animtedbutton.id = "buttonEvent"
+                    document.getElementById("buttonEvent").onclick = () => window.location = "../Zeus - exhibition 2/index.html";
+
+                    mainfire()
+
+                }, 6500)
+            }
+    })
+
 /************************* Title *******************/
 
 const title = document.createElement("h1");

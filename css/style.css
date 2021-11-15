@@ -12,6 +12,18 @@ html, body {
 	font-size: 16px;
 }
 
+
+@media (max-width: 992px) {
+	body {
+		flex-direction: column;
+	}
+}
+
+@media (orientation: landscape) {
+	body {
+		flex-direction: row;
+	}
+}
 /******************************************************************************/
 
 main {
@@ -200,39 +212,3 @@ section .box content button {
 }
 
 /******************************************************************************/
-
-@media (max-height: 992px) {
-	body {
-		flex-direction: column;
-		height: 160vh
-	}
-
-	.card1 {
-		margin-top: 170px;
-	}
-}
-
-@media (max-height: 992px) and (orientation: landscape) {
-	body {
-		flex-direction: row;
-		height: 160vh;
-		width: 100vw;
-		background-repeat: repeat;
-	}
-
-	.card1 {
-		margin-top: 0;
-	}
-
-}
-
-@media (min-width: 992px) {
-	body {
-		flex-direction: row;
-		height: 100vh;
-	}
-
-	.card1 {
-		margin-top: 0;
-	}
-}

@@ -7,6 +7,7 @@ body {
     overflow: hidden;
     font-size: 16px;
     font-family: 'Poppins', sans-serif;
+
 }
 
 canvas {
@@ -56,6 +57,7 @@ section.loader div svg {
     stroke-dasharray: 518;
     stroke-dashoffset: 518;
     transform: rotateX(180deg);
+    animation-delay: 2s;
     animation: animate 2s linear infinite;
 }
 
@@ -91,7 +93,7 @@ section.loader div svg circle {
 
 /*****************************************************/
 
-@media (max-width: 992) and (orientation: landscape) {
+@media (max-width: 992px) and (orientation: landscape) {
     div {
         height: 55%;
     }
@@ -130,7 +132,7 @@ section.hello {
     padding: 0;
     background-color: black;
     overflow: hidden;
-    animation: changebg 8s cubic-bezier(.68, -0.55, .27, 1.55) 5s;
+    animation: changebg 8s cubic-bezier(.68, -0.55, .27, 1.55) 6s;
 }
 
 
@@ -162,7 +164,7 @@ section.hello div.hellocont {
     align-items: center;
     margin: 0;
     opacity: 1;
-    animation: hello 8s cubic-bezier(.68, -0.55, .27, 1.55) forwards 5s;
+    animation: hello 8s cubic-bezier(.68, -0.55, .27, 1.55) forwards 6s;
 }
 
 section.hello div.hellocont svg {
@@ -170,23 +172,23 @@ section.hello div.hellocont svg {
     margin: -21%;
     stroke-dasharray: 2000;
     stroke-dashoffset: 2000;
-    animation: strokeanimate 8s ease forwards 5s;
+    animation: strokeanimate 8s ease forwards 7s;
 }
 
 section.hello div.hellocont svg:nth-child(2) {
-    animation-delay: 6s !important;
-}
-
-section.hello div.hellocont svg:nth-child(3) {
     animation-delay: 7s !important;
 }
 
-section.hello div.hellocont svg:nth-child(4) {
+section.hello div.hellocont svg:nth-child(3) {
     animation-delay: 8s !important;
 }
 
-section.hello div.hellocont svg:nth-child(5) {
+section.hello div.hellocont svg:nth-child(4) {
     animation-delay: 9s !important;
+}
+
+section.hello div.hellocont svg:nth-child(5) {
+    animation-delay: 10s !important;
 }
 
 @keyframes strokeanimate {
@@ -197,7 +199,7 @@ section.hello div.hellocont svg:nth-child(5) {
 
 section.hello div.hellocont svg text {
     transition: .5s;
-    animation: fillwhite .5s ease forwards 10.5s;
+    animation: fillwhite .5s ease forwards 11.5s;
 }
 
 @keyframes fillwhite {
@@ -207,6 +209,7 @@ section.hello div.hellocont svg text {
 
     to {
         fill: white;
+        opacity: 0;
     }
 }
 
@@ -235,8 +238,9 @@ section.hello .text {
     padding: 30px;
     letter-spacing: 2px;
     text-transform: uppercase;
+    overflow: hidden;
     opacity: 0;
-    animation-delay: 11s !important;
+    animation-delay: 12s !important;
     animation: apper 12s linear;
 }
 

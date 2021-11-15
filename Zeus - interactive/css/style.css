@@ -437,11 +437,10 @@ section.fireworks div {
 section.fireworks div button {
     width: 180px;
     height: 60px;
-    color: white;
     background-color: black;
-    text-align: center;
     transition: 0.5s;
     border: none;
+    text-decoration: none;
 }
 
 div button:hover {
@@ -449,6 +448,12 @@ div button:hover {
     transition-delay: 0.8s;
     background-size: 180px;
     animation: buttonanimate 0.8s steps(8) forwards;
+}
+
+a {
+    color: white;
+    text-align: center;
+    text-decoration: none;
 }
 
 @keyframes buttonanimate {
